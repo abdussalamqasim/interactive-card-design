@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <aside>
+          <div>
+            <img src="images/bg-main-desktop.png" alt="" />
+          </div>
+          <div class="frontCard">
+            <img src="images/card-logo.svg" alt="" />
+            <div class="zeros">0000 0000 0000 0000</div>
+            <div class="name">Jane Appleseed</div>
+            <div class="date">00/00</div>
+          </div>
+          <div class="backCard">
+            <p class="cvcNum">000</p>
+          </div>
+        </aside>
+        <div class="formAspect">
+          <form action="">
+            <!-- <fieldset> -->
+            <label for="cardOwner">Cardholder Name</label>
+            <input
+              type="text"
+              placeholder="e.g. Jane Appleseed"
+              class="cardName"
+              name="cardOwner"
+            />
+            <div class="error hidden nameError">Can't be blank</div>
+            <label for="cardNum">Card Number</label>
+            <input
+              type="text"
+              placeholder="e.g. 1234 5678 9123 0000"
+              class="cardNumber"
+              name="cardNum"
+            />
+            <div class="error error1 hidden">
+              Please enter correct card number
+            </div>
+            <div class="error hidden secondError">
+              Wrong format. numbers only
+            </div>
+            <label for="month">EXP.DATE (MM/YY)</label>
+            <label for="cvc" class="shift">CVC</label>
+            <span class="lastForm">
+              <input
+                type="text"
+                placeholder="MM"
+                class="number cardMonth"
+                name="month"
+              />
+              <input
+                type="text"
+                placeholder="YY"
+                class="number cardYear"
+                name="year"
+              />
+              <input
+                type="text"
+                placeholder="e.g. 123"
+                class="CVC"
+                name="cvc"
+              />
+            </span>
+            <span class="errors">
+              <div class="hidden month_error">Can't be blank</div>
+
+              <span class="hidden cvc_error">Can't be blank</span>
+            </span>
+
+            <!-- <span class="errors errors2 hidden">
+              <div>Wrong format</div>
+
+              <div>Wrong format</div>
+            </span> -->
+
+            <button class="btn">Confirm</button>
+            <!-- </fieldset> -->
+          </form>
+        </div>
+        <div class="message hidden">
+          <img src="images/icon-complete.svg" alt="" />
+          <h3>THANK YOU!</h3>
+          <p>We've added your card details</p>
+          <button class="btnCont">Continue</button>
+        </div>
+      </div>
+
+      <footer>
+        <div class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Abdussalam Qasim</a>.
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

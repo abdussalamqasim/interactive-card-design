@@ -1,0 +1,199 @@
+/* @import url("https://fonts.google.com/specimen/Space+Grotesk"); */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* @font-face {
+  font-family: "Space Grotesk";
+  src: url("https://fonts.google.com/specimen/Space+Grotesk");
+} */
+
+body {
+  font-family: "Space Grotesk";
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  place-items: center;
+}
+/* .container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+} */
+.aside {
+  /* width: 50%; */
+  height: 100%;
+}
+.frontCard {
+  background: url(images/bg-card-front.png);
+  height: 250px;
+  width: 500px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 180px;
+  left: 200px;
+}
+.backCard {
+  background: url(images/bg-card-back.png);
+  height: 250px;
+  width: 500px;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 460px;
+  left: 290px;
+}
+
+.formAspect {
+  background-color: white;
+  height: 100%;
+  position: absolute;
+  right: 200px;
+  top: 250px;
+  /* display: flex;
+  flex-direction: column; */
+  /* margin-right: -50px; */
+
+  /* width: 50%; */
+}
+
+input {
+  display: block;
+  width: 300px;
+  margin: 3px 0px 25px 0px;
+  padding: 10px 20px 10px 10px;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 5px;
+  color: black;
+  cursor: pointer;
+}
+input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+.number {
+  width: 22px;
+  /* display: inline; */
+  /* display: inline-block; */
+}
+
+.CVC {
+  width: 160px;
+  margin-left: 15px;
+}
+
+.lastForm {
+  display: flex;
+  justify-content: start;
+  gap: 7px;
+}
+
+.errors {
+  display: flex;
+  justify-content: start;
+  gap: 45px;
+  font-size: smaller;
+  color: hsl(0, 100%, 66%);
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+label {
+  color: hsl(278, 68%, 11%);
+  font-family: monospace;
+  font-weight: 500px;
+  text-transform: uppercase;
+  font-size: small;
+  margin-bottom: -5px;
+}
+
+.shift {
+  margin-left: 30px;
+}
+/* fieldset  */
+
+button {
+  width: 330px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  cursor: pointer;
+}
+
+.zeros {
+  position: absolute;
+  top: 130px;
+  margin-left: 30px;
+  color: white;
+  font-size: 27px;
+  letter-spacing: 6px;
+  font-family: sans-serif;
+}
+
+.name {
+  position: absolute;
+  top: 200px;
+  left: 30px;
+  color: white;
+}
+
+.date {
+  position: absolute;
+  top: 200px;
+  left: 360px;
+  color: white;
+}
+
+.backCard p {
+  position: absolute;
+  top: 110px;
+  left: 370px;
+  color: white;
+}
+.error {
+  font-size: small;
+  color: hsl(0, 100%, 66%);
+  margin-top: -20px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+/* Message aspect*/
+.message {
+  background-color: white;
+  height: 100%;
+  position: absolute;
+  right: 170px;
+  top: 310px;
+}
+
+.message h3 {
+  font-size: 30px;
+  margin-left: -30px;
+  margin-top: 30px;
+  font-weight: normal;
+}
+.message p {
+  margin-left: -50px;
+  color: hsl(279, 6%, 55%);
+  margin-top: 20px;
+}
+
+.btnCont {
+  margin-top: 30px;
+  margin-left: -100px;
+  padding: 15px;
+}
+
+footer div {
+  display: inline;
+  margin-left: 450px;
+}
