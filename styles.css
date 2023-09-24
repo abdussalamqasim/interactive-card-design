@@ -1,7 +1,8 @@
-/* @import url("https://fonts.google.com/specimen/Space+Grotesk"); */
+@import url("https://fonts.google.com/specimen/Space+Grotesk");
 * {
   margin: 0;
   padding: 0;
+  font-family: "Space Grotesk";
 }
 
 /* @font-face {
@@ -10,7 +11,7 @@
 } */
 
 body {
-  font-family: "Space Grotesk";
+  font-family: "Space Grotesk", sans-serif;
 }
 .container {
   width: 100%;
@@ -45,6 +46,10 @@ body {
   position: absolute;
   top: 460px;
   left: 290px;
+}
+
+.mobile {
+  display: none;
 }
 
 .formAspect {
@@ -196,4 +201,117 @@ button {
 footer div {
   display: inline;
   margin-left: 450px;
+}
+
+/* responsive code  */
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+  }
+
+  .desktopImage {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+  }
+
+  .frontCard {
+    background: url(images/bg-card-front.png);
+    height: 30%;
+    width: 85%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 25%;
+    left: 10px;
+    z-index: 1;
+    border-radius: 10px;
+    font-size: 13px;
+  }
+
+  .backCard {
+    background: url(images/bg-card-back.png);
+    height: 30%;
+    width: 85%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    z-index: 0;
+    border-radius: 10px;
+  }
+  .formAspect {
+    height: 60%;
+    position: absolute;
+    width: 100%;
+    left: 30px;
+    top: 70%;
+  }
+
+  input {
+    width: 70%;
+  }
+
+  .zeros {
+    font-size: 15px;
+    position: absolute;
+    top: 90px;
+    margin-left: 5px;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .CVC {
+    width: 120px;
+  }
+
+  button {
+    width: 80%;
+  }
+
+  .name {
+    position: absolute;
+    top: 150px;
+    left: 10px;
+  }
+
+  .date {
+    position: absolute;
+    top: 150px;
+    left: 240px;
+  }
+
+  .backCard p {
+    position: absolute;
+    top: 110px;
+    left: 260px;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .message {
+    background-color: white;
+    height: 50%;
+    position: absolute;
+    right: 70px;
+    top: 450px;
+  }
+
+  .btnCont {
+    margin-top: 30px;
+    width: 330px;
+    padding: 13px;
+    margin-right: -100px;
+  }
 }
