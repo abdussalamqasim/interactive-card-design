@@ -74,7 +74,6 @@ buttonEl.addEventListener("click", function (e) {
   } else {
     dateEl.textContent = `${cardMonthEl.value}/${cardYearEl.value}`;
   }
-  
 
   if (Number(cardMonthEl) === NaN || Number(cardYearEl) === NaN) {
     errors2El.classList.remove("hidden");
@@ -92,7 +91,6 @@ buttonEl.addEventListener("click", function (e) {
   } else {
     cvcNumEl.textContent = cvcEl.value;
   }
- 
 
   // Show thank you message
   if (
