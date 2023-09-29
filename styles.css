@@ -262,8 +262,8 @@ footer div {
   .zeros {
     font-size: 15px;
     position: absolute;
-    top: 90px;
-    margin-left: 5px;
+    top: 95px;
+    left: 5px;
   }
 
   footer {
@@ -303,6 +303,7 @@ footer div {
   .message {
     background-color: white;
     height: 50%;
+    width: 50%;
     position: absolute;
     right: 70px;
     top: 450px;

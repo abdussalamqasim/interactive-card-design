@@ -20,12 +20,6 @@ const messageEl = document.querySelector(".message");
 const month_error = document.querySelector(".month_error");
 const cvc_error = document.querySelector(".cvc_error");
 
-const formatInputLetter = function (inputString) {
-  const pattern = /[^0-9]/;
-  console.log(pattern.test(inputString));
-  return pattern.test(inputString);
-};
-
 const formatInputNumber = function (inputString) {
   if (inputString.length > 20 && inputString.includes(" ")) {
     inputString = inputString.substring(0, 20);
@@ -56,6 +50,7 @@ buttonEl.addEventListener("click", function (e) {
   if (cardNumberEl.value === "") {
     zerosEl.textContent = "0000 0000 0000 0000";
   }
+  const regex2 = /^\s+$/;
 
   if (cardNameEl.value === "") {
     nameEl.textContent = "Jane Appleseed";
@@ -64,7 +59,40 @@ buttonEl.addEventListener("click", function (e) {
   } else {
     nameEl.textContent = cardNameEl.value;
   }
+
+  const regex = /[^A-Za-z]s/;
+  if (regex.test(cardNameEl.value)) {
+    document.querySelector(".nameError").textContent =
+      "Name should only contain letters";
+    document.querySelector(".nameError").classList.remove("hidden");
+    cardNameEl.style.borderColor = "hsl(0, 100%, 66%)";
+    nameEl.textContent = "Jane Appleseed";
+  }
+
+  if (regex2.test(cardNameEl.value)) {
+    nameEl.value = "Jane Appleseed";
+    document.querySelector(".nameError").textContent = "Enter a valid name";
+    document.querySelector(".nameError").classList.remove("hidden");
+    cardNameEl.style.borderColor = "hsl(0, 100%, 66%)";
+    nameEl.textContent = "Jane Appleseed";
+  }
+
+  const pattern = /[^0-9\s]/;
+  if (pattern.test(cardNumberEl.value)) {
+    error1El.textContent = "Wrong format, numbers only";
+    error1El.classList.remove("hidden");
+    zerosEl.textContent = "0000 0000 0000 0000";
+    cardNumberEl.style.borderColor = "hsl(0, 100%, 66%)";
+  }
+
+  if (regex2.test(cardNumberEl)) {
+    error1El.textContent = "Enter valid card number";
+    error1El.classList.remove("hidden");
+    zerosEl.textContent = "0000 0000 0000 0000";
+    cardNumberEl.style.borderColor = "hsl(0, 100%, 66%)";
+  }
   // month and year errors
+
   if (cardMonthEl.value === "" || cardYearEl.value === "") {
     dateEl.textContent = "00/00";
     errorsEl.classList.remove("hidden");
@@ -75,10 +103,29 @@ buttonEl.addEventListener("click", function (e) {
     dateEl.textContent = `${cardMonthEl.value}/${cardYearEl.value}`;
   }
 
-  if (Number(cardMonthEl) === NaN || Number(cardYearEl) === NaN) {
-    errors2El.classList.remove("hidden");
+  if (pattern.test(cardMonthEl.value || cardYearEl.value)) {
+    month_error.textContent = "Wrong format, numbers only";
+    month_error.classList.remove("hidden");
+    dateEl.textContent = `00/00`;
+    cardMonthEl.style.borderColor = "hsl(0, 100%, 66%)";
+    cardYearEl.style.borderColor = "hsl(0, 100%, 66%)";
   }
 
+  if (regex2.test(cardMonthEl.value || cardYearEl.value)) {
+    dateEl.textContent = `00/00`;
+    month_error.textContent = "Enter a valid date";
+    month_error.classList.remove("hidden");
+    cardMonthEl.style.borderColor = "hsl(0, 100%, 66%)";
+    cardYearEl.style.borderColor = "hsl(0, 100%, 66%)";
+  }
+
+  if (cardMonthEl.value > 2 || cardYearEl.value > 2) {
+    dateEl.textContent = `00/00`;
+    month_error.textContent = "Enter a valid date";
+    month_error.classList.remove("hidden");
+    cardMonthEl.style.borderColor = "hsl(0, 100%, 66%)";
+    cardYearEl.style.borderColor = "hsl(0, 100%, 66%)";
+  }
   // cvc errors
   if (cvcEl.value === "") {
     cvcNumEl.textContent = "000";
@@ -90,6 +137,34 @@ buttonEl.addEventListener("click", function (e) {
     cvc_error.classList.remove("hidden");
   } else {
     cvcNumEl.textContent = cvcEl.value;
+  }
+
+  if (pattern.test(cvcEl.value)) {
+    cvc_error.textContent = "Wrong format, numbers only";
+    cvc_error.classList.remove("hidden");
+    cvcNumEl.textContent = "000";
+    cvcEl.style.borderColor = "hsl(0, 100%, 66%)";
+  }
+
+  if (regex2.test(cvcEl.value)) {
+    cvcNumEl.textContent = "000";
+    cvc_error.textContent = "Enter valid cvc number";
+    cvc_error.classList.remove("hidden");
+    cvcEl.style.borderColor = "hsl(0, 100%, 66%)";
+  }
+
+  if (
+    cvc_error.textContent === "Enter valid cvc number" &&
+    month_error.textContent === "Enter a valid date"
+  ) {
+    document.querySelector(".errors").style.gap = "10px";
+  }
+
+  if (cvcEl.textContent > 3) {
+    cvcNumEl.textContent = "000";
+    cvc_error.textContent = "Enter valid cvc number";
+    cvc_error.classList.remove("hidden");
+    cvcEl.style.borderColor = "hsl(0, 100%, 66%)";
   }
 
   // Show thank you message
